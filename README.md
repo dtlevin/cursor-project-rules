@@ -50,6 +50,62 @@ Before making changes:
 - Confirm all requirements are met
 - Verify no steps were skipped
 
+## Git Workflow Rules
+
+### Branch Naming Conventions
+- `main`: Production-ready code
+- `develop`: Integration branch for features
+- `foundation/*`: Core setup and infrastructure branches
+- `feature/*`: New features (e.g., feature/user-auth)
+- `bugfix/*`: Bug fixes (e.g., bugfix/login-crash)
+- `hotfix/*`: Emergency production fixes
+- `release/*`: Release preparation
+
+### Branch Workflow
+1. **Branch Creation**
+   - Branch off from:
+     - `develop` (for features)
+     - `main` (for hotfixes)
+     - `foundation` (for core infrastructure)
+   - Use descriptive names with type prefix
+   - Include ticket/issue number if applicable
+   - Use lowercase and hyphens for readability
+
+2. **Commit Guidelines**
+   - Write clear commit messages
+   - Use conventional commits format:
+     - `feat`: New features
+     - `fix`: Bug fixes
+     - `docs`: Documentation
+     - `style`: Formatting
+     - `refactor`: Code restructuring
+     - `test`: Test addition/modification
+     - `chore`: Maintenance
+
+3. **Merge Requirements**
+   - All tests must pass
+   - Code review required
+   - No merge conflicts
+   - Up-to-date with base branch
+   - Proper documentation updated
+
+4. **Protected Branches**
+   - `main`: Requires PR and review
+   - `develop`: Requires PR and review
+   - `foundation/*`: Requires PR and review
+
+5. **Release Process**
+   - Create release branch from develop
+   - Version bump and changelog
+   - Final testing and review
+   - Merge to main with tag
+   - Merge back to develop
+
+6. **Emergency Fixes**
+   - Hotfix branches from main
+   - Immediate review priority
+   - Merge to main AND develop
+
 ## Important Warnings
 
 - ⚠️ Never proceed to the next step without completing the previous one

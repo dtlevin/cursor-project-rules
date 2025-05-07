@@ -1,4 +1,4 @@
-   # 1. ENFORCEMENT RULES
+ # 1. ENFORCEMENT RULES
       - You MUST check this file before EVERY interaction
       - You MUST follow the checklist in EXACT order
       - You MUST NOT proceed if ANY step is unclear

@@ -1,0 +1,83 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+ # Branch Management Rules
+
+  ## Branch Naming Conventions
+  - main: Production-ready code
+  - develop: Integration branch for features
+  - foundation/*: Core setup and infrastructure branches
+  - feature/*: New features (e.g., feature/user-auth)
+  - bugfix/*: Bug fixes (e.g., bugfix/login-crash)
+  - hotfix/*: Emergency production fixes
+  - release/*: Release preparation
+
+  ## Branch Workflow Rules
+  1. All development MUST branch off from:
+     - develop (for features)
+     - main (for hotfixes)
+     - foundation (for core infrastructure)
+
+  2. Branch Creation:
+     - Use descriptive names with type prefix
+     - Include ticket/issue number if applicable
+     - Use lowercase and hyphens for readability
+
+  3. Commit Guidelines:
+     - Write clear commit messages
+     - Use conventional commits format:
+       - feat: New features
+       - fix: Bug fixes
+       - docs: Documentation
+       - style: Formatting
+       - refactor: Code restructuring
+       - test: Test addition/modification
+       - chore: Maintenance
+
+  4. Merge Requirements:
+     - All tests must pass
+     - Code review required
+     - No merge conflicts
+     - Up-to-date with base branch
+     - Proper documentation updated
+
+  5. Code Review Process:
+     - At least one approval required
+     - No unresolved comments
+     - All CI checks passing
+     - Test coverage maintained/improved
+
+  6. Branch Cleanup:
+     - Delete branches after successful merge
+     - Regular cleanup of stale branches
+     - Keep remote and local in sync
+
+  7. Protected Branches:
+     - main: Requires PR and review
+     - develop: Requires PR and review
+     - foundation/*: Requires PR and review
+
+  8. Release Process:
+     - Create release branch from develop
+     - Version bump and changelog
+     - Final testing and review
+     - Merge to main with tag
+     - Merge back to develop
+
+  9. Emergency Fixes:
+     - Hotfix branches from main
+     - Immediate review priority
+     - Merge to main AND develop
+
+  10. Documentation:
+      - Update docs with branch changes
+      - Keep README current
+      - Document breaking changes
+
+  ## Branch Enforcement
+  - CI/CD pipeline enforces these rules
+  - Regular compliance audits
+  - Team code review enforces standards
+  - Automated branch protection rules
