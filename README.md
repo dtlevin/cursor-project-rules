@@ -1,133 +1,76 @@
-# Cursor Project Development Rules
+# Cursor Project Rules
 
-This document outlines the strict development workflow and rules that must be followed when working on this project using Cursor IDE.
+This repository contains a collection of rules and standards for Cursor IDE projects. These rules help maintain consistency, quality, and best practices across development workflows.
 
-## Core Principles
+## Repository Structure
 
-1. **Strict Adherence to Process**
-   - Every interaction must begin with a review of these rules
-   - All steps must be followed in exact order
-   - No assumptions about requirements
-   - No skipping of verification steps
+```
+.
+├── .cursor/
+│   └── rules/           # Cursor rule files
+├── cursor-rules-location.mdc  # Rules for Cursor rule file placement
+├── swift-standards.mdc        # Swift coding standards
+├── project-rules.mdc          # Core project workflow rules
+├── git-rules.mdc             # Git workflow and branch management rules
+└── README.md                 # This file
+```
 
-2. **Documentation First**
-   - All development must be aligned with the development plan
-   - Documentation must be kept up-to-date
-   - Tasks must be properly marked as completed
+## Rule Files
 
-3. **Quality Assurance**
-   - All steps must be verified before proceeding
-   - Deviations must be documented and corrected
-   - Clarification must be sought for any ambiguity
+### 1. Cursor Rules Location (`cursor-rules-location.mdc`)
+- Defines standards for placing and organizing Cursor rule files
+- Specifies the correct directory structure (`.cursor/rules/`)
+- Enforces naming conventions for rule files
+- Ensures proper organization of rule files within the project
 
-## Development Workflow
+### 2. Swift Standards (`swift-standards.mdc`)
+- Comprehensive Swift coding standards and best practices
+- Covers code organization, error handling, testing, documentation, and performance
+- Enforces Swift API Design Guidelines
+- Includes examples of good and bad practices
 
-### 1. Documentation Review
-Before starting any work, developers must:
-- Review the development plan (`simpleList/Documentation/DEVELOPMENT_PLAN.md`)
-- Read the app description (`simpleList/Documentation/app_description.txt`)
-- Verify the current development phase
+### 3. Project Rules (`project-rules.mdc`)
+- Core project development workflow requirements
+- Mandatory review checklist for all actions
+- Documentation review requirements
+- Branch workflow verification
+- Implementation planning guidelines
+- Approval process requirements
 
-### 2. Branch Management
-Ensure proper branch workflow:
-- Verify current branch
-- Confirm branch type (feature/foundation/bugfix)
-- Validate branch naming convention
-- Check branch source (develop/main)
+### 4. Git Rules (`git-rules.mdc`)
+- Branch naming conventions and management
+- Branch workflow rules
+- Commit guidelines and conventional commits
+- Merge requirements and code review process
+- Branch cleanup and protection rules
+- Release process guidelines
+- Emergency fix procedures
+- Documentation requirements
 
-### 3. Implementation Planning
-Before coding:
-- Cross-reference with development plan
-- Verify technical requirements
-- Review code structure requirements
-- Check naming conventions
-- Validate against app description
+## Usage
 
-### 4. Approval Process
-Before making changes:
-- Present complete implementation plan
-- Wait for explicit approval
-- Confirm all requirements are met
-- Verify no steps were skipped
+1. Place all Cursor rule files (`.mdc`) in the `.cursor/rules/` directory
+2. Follow the naming conventions specified in `cursor-rules-location.mdc`
+3. Ensure all rules are properly formatted according to the Cursor rule specification
+4. Keep rules up to date with project requirements
 
-## Git Workflow Rules
+## Contributing
 
-### Branch Naming Conventions
-- `main`: Production-ready code
-- `develop`: Integration branch for features
-- `foundation/*`: Core setup and infrastructure branches
-- `feature/*`: New features (e.g., feature/user-auth)
-- `bugfix/*`: Bug fixes (e.g., bugfix/login-crash)
-- `hotfix/*`: Emergency production fixes
-- `release/*`: Release preparation
+When adding or modifying rules:
+1. Follow the mandatory review checklist in `project-rules.mdc`
+2. Ensure proper placement in `.cursor/rules/` directory
+3. Follow naming conventions
+4. Include clear examples and documentation
+5. Update this README if necessary
 
-### Branch Workflow
-1. **Branch Creation**
-   - Branch off from:
-     - `develop` (for features)
-     - `main` (for hotfixes)
-     - `foundation` (for core infrastructure)
-   - Use descriptive names with type prefix
-   - Include ticket/issue number if applicable
-   - Use lowercase and hyphens for readability
+## Version Control
 
-2. **Commit Guidelines**
-   - Write clear commit messages
-   - Use conventional commits format:
-     - `feat`: New features
-     - `fix`: Bug fixes
-     - `docs`: Documentation
-     - `style`: Formatting
-     - `refactor`: Code restructuring
-     - `test`: Test addition/modification
-     - `chore`: Maintenance
+All changes to rules should follow the Git workflow specified in `git-rules.mdc`, including:
+- Proper branch naming
+- Conventional commits
+- Code review process
+- Documentation updates
 
-3. **Merge Requirements**
-   - All tests must pass
-   - Code review required
-   - No merge conflicts
-   - Up-to-date with base branch
-   - Proper documentation updated
+## License
 
-4. **Protected Branches**
-   - `main`: Requires PR and review
-   - `develop`: Requires PR and review
-   - `foundation/*`: Requires PR and review
-
-5. **Release Process**
-   - Create release branch from develop
-   - Version bump and changelog
-   - Final testing and review
-   - Merge to main with tag
-   - Merge back to develop
-
-6. **Emergency Fixes**
-   - Hotfix branches from main
-   - Immediate review priority
-   - Merge to main AND develop
-
-## Important Warnings
-
-- ⚠️ Never proceed to the next step without completing the previous one
-- ⚠️ Never assume approval
-- ⚠️ Never make changes without following all steps
-- ⚠️ Stop and ask for clarification if any step is unclear
-
-## Documentation Updates
-
-After completing any task:
-1. Update `simpleList/Documentation/DEVELOPMENT_PLAN.md`
-2. Mark completed tasks with [x]
-3. Verify the development plan is current before proceeding
-
-## Getting Help
-
-If you encounter any ambiguity or uncertainty:
-1. Stop immediately
-2. Document the issue
-3. Request clarification
-4. Wait for explicit guidance before proceeding
-
----
-
-Remember: These rules are designed to maintain consistency and quality in development. Following them strictly ensures the project's success and maintainability. 
+[Specify your license here] 

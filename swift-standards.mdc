@@ -1,0 +1,71 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Swift Coding Standards
+
+Standards and best practices for Swift development.
+
+<rule>
+name: swift_standards
+description: Swift coding standards and best practices
+filters:
+  - type: file_extension
+    pattern: "\\.swift$"
+  - type: event
+    pattern: "file_(create|modify)"
+
+actions:
+  - type: enforce
+    message: |
+      # Swift Coding Standards
+
+      ## 1. Code Organization
+      - Use clear, descriptive names for types, functions, and variables
+      - Follow Swift API Design Guidelines
+      - Use proper access control levels
+      - Organize code into logical groups with MARK comments
+
+      ## 2. Error Handling
+      - Use Swift's error handling system (do-try-catch)
+      - Define custom error types when needed
+      - Handle errors at appropriate levels
+      - Document error cases
+
+      ## 3. Testing
+      - Write unit tests for all public interfaces
+      - Use XCTest framework
+      - Follow AAA pattern (Arrange-Act-Assert)
+      - Test edge cases and error conditions
+
+      ## 4. Documentation
+      - Document public interfaces with /// comments
+      - Include parameter descriptions
+      - Document return values
+      - Add examples where helpful
+
+      ## 5. Performance
+      - Use value types when appropriate
+      - Avoid force unwrapping
+      - Use lazy properties for expensive computations
+      - Profile and optimize critical paths
+
+examples:
+  - input: |
+      // Bad
+      var x: String!
+      func doSomething() { }
+
+      // Good
+      var name: String
+      /// Performs the specified operation
+      /// - Parameter input: The input value
+      /// - Returns: The result of the operation
+      func performOperation(input: String) -> Result<String, Error>
+    output: "Following Swift coding standards"
+
+metadata:
+  priority: high
+  version: 1.0
+</rule>

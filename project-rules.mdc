@@ -1,0 +1,66 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Rules
+
+Core rules and requirements for project development workflow.
+
+<rule>
+name: project_rules
+description: Core project rules and workflow requirements
+filters:
+  - type: event
+    pattern: ".*"
+
+actions:
+  - type: enforce
+    message: |
+      # MANDATORY REVIEW CHECKLIST - COMPLETE IN ORDER
+      Before ANY action, you MUST:
+
+      ## 1. Documentation Review
+      - [ ] Read simpleList/Documentation/DEVELOPMENT_PLAN.md
+      - [ ] Read simpleList/Documentation/app_description.txt
+      - [ ] Verify current phase in development plan
+
+      ## 2. Branch Workflow Verification
+      - [ ] Check current branch
+      - [ ] Verify correct branch type (feature/foundation/bugfix)
+      - [ ] Confirm branch naming convention
+      - [ ] Validate branch source (develop/main)
+
+      ## 3. Implementation Planning
+      - [ ] Cross-reference with development plan
+      - [ ] Verify technical requirements
+      - [ ] Check code structure requirements
+      - [ ] Review naming conventions
+      - [ ] Validate against app description
+
+      ## 4. Approval Process
+      - [ ] Present complete plan
+      - [ ] Wait for explicit approval
+      - [ ] Confirm all requirements met
+      - [ ] Verify no steps skipped
+
+      # WARNINGS
+      - NEVER proceed to a next step without completing the previous
+      - NEVER assume approval
+      - NEVER make any changes without following ALL steps above
+      - STOP and ask if ANY step is unclear
+
+examples:
+  - input: "Implement new feature"
+    output: |
+      Following mandatory checklist:
+      1. Documentation Review ✓
+      2. Branch Workflow Verification ✓
+      3. Implementation Planning ✓
+      4. Approval Process ✓
+      Proceeding with implementation...
+
+metadata:
+  priority: high
+  version: 1.0
+</rule>

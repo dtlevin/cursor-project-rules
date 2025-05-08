@@ -3,6 +3,11 @@ description:
 globs: 
 alwaysApply: true
 ---
+---
+description: Rules for managing Git
+globs: 
+alwaysApply: true
+---
  # Branch Management Rules
 
   ## Branch Naming Conventions
